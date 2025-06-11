@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block titulo %}Página principal{% endblock %}
+
+{% block conteudo %}
+<h1>Bem vindo, --!</h1>
+
+
+
+<picture>
+    <img src="{{ url_for('static', filename='img/peixeboi1.jpg') }}" width="300px">
+    <p>peixe boi!!</p>
+</picture>
+
+<picture>
+    <img src="{{ url_for('static', filename='img/bigboi.png') }}" width="300px">
+    <p>big boi blastoise</p>
+</picture>
+
+<h2>um salve para todos os fãs de peixe boi do mundo</h2>
+{% endblock %}

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    width: 600px;
+    margin: auto;
+
+    font-family: 'MS UI Gothic';
+    color: rgb(255, 208, 0);
+
+    background-color: rgb(29, 29, 34);
+}
+
+footer {
+    margin-top: 100px;
+}
+
+header {
+    padding-bottom: 30px;
+    border-bottom: 1px solid rgb(255, 208, 0);
+    margin-bottom: 30px;
+}
+
+header h1 {
+    width: fit-content;
+    margin: 20px auto;
+}
+
+.message-ul {
+    color: green;
+    padding-left: 40px;
+}
+
+.message-ul li {
+    list-style-type: none;
+}

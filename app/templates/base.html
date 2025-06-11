@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}{% endblock %}</title>
+    <link rel="icon" href="{{ url_for('static', filename='/img/logo.png') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='/css/style.css') }}">
+
+</head>
+<body>
+    <header>
+        <h1>Meu Site</h1>
+    </header>
+
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        <ul class="message-ul">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    {% endwith %}
+
+
+    {% block conteudo %}{% endblock %}
+
+    
+
+    <footer>
+        <h1>Links:</h1>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/login">Login</a></li>
+            <li><a href="/contato">Contato</a></li>
+            <li><a href="/sobre">Sobre</a></li>
+        </ul>
+        Todos os direitos reservados.
+    </footer>
+</body>
+</html>
