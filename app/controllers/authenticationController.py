@@ -1,4 +1,4 @@
-from flask import render_template, flash
+from flask import render_template, flash, redirect
 
 class AuthenticationController:
 
@@ -9,4 +9,4 @@ class AuthenticationController:
             'nome': form.username.data
         }
 
-        return render_template('/')
+        return redirect('/')

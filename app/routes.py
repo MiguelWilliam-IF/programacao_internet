@@ -6,13 +6,6 @@ from app.controllers.authenticationController import AuthenticationController
 
 @app.route("/")
 def home():
-    usuario = {
-        'nome': 'Miguel',
-        'produtos': ['banana', 'uva', 'maçã', 'salada mista']
-    }
-
-    esta_logado = True
-
     return render_template("index.html", usuario = None, usuario_logado = False)
 
 @app.route("/sobre")
