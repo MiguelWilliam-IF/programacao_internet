@@ -1,8 +1,10 @@
-from app import app
-from flask import render_template
+from app import app, db
+from flask import render_template, redirect, request
 from app.forms.login_form import LoginForm
+from app.forms.inserir_form import InserirForm
 from app.controllers.authenticationController import AuthenticationController
-
+from app.controllers.insertController import InsertController
+from app.models import Usuario
 
 @app.route("/")
 def home():
@@ -22,3 +24,20 @@ def login():
     if formulario.validate_on_submit():
         return AuthenticationController.login(formulario)
     return render_template("login.html", title='Login', form=formulario)
+
+@app.route("/cadastro")
+def cadastro():
+    usuario = Usuario(username='leosilva', email='leo@leo.com')
+    db.session.add(usuario)
+    db.session.commit()
+
+    return redirect('/')
+
+@app.route("/inserir", methods=['GET', 'POST'])
+def inserir():
+    formulario = InserirForm()
+
+    if formulario.validate_on_submit():
+        return InsertController.cadastro(formulario)
+        
+    return render_template("inserir.html", title='Cadastro', form=formulario)
